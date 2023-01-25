@@ -16,3 +16,10 @@ router.get('/ping', async function(req, res, next) {
 });
 
 module.exports = router;
+
+router.get('/create', async function(req, res, next) {
+  const [raws] = await pool.query('SELECT * FROM users')
+  res.json(raws);
+});
+
+module.exports = router;
