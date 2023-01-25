@@ -11,8 +11,8 @@ module.exports = router;
 
 router.get('/ping', async function(req, res, next) {
   const result = await pool.query('SELECT "hello world" as RESULT');
-  console.log(result)
-  res.send('PING');
+  console.log(result[0])
+  res.json(result[0]);
 });
 
 module.exports = router;
