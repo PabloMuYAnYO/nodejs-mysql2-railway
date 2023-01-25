@@ -9,7 +9,9 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-router.get('/ping', function(req, res, next) {
+router.get('/ping', async function(req, res, next) {
+  const result = await pool.query('SELECT "hello world" as RESULT');
+  console.log(result)
   res.send('PING');
 });
 

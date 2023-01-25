@@ -7,6 +7,8 @@
 const app = require('../app');
 const debug = require('debug')('nodejs-mysql2-railway:server');
 const http = require('http');
+/**My dependencies */
+const colors = require('colors'); //**npm i colors -D */
 
 /**
  * Get port from environment and store in Express.
@@ -24,7 +26,7 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
+console.log(`Server on port: ${port} `.blue)
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
